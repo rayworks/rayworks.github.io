@@ -12,7 +12,7 @@ tags:
 常见的场景是，线程A获取了Lock A， 线程B获取了Lock B；随后线程A进一步想获取Lock B，线程B进一步想获取Lock A，这样就出现了死锁。
 
 
-```
+``` java
 thread A {
   lockA.lock();
   //...
@@ -20,7 +20,7 @@ thread A {
 }
 ```
 
-```
+``` java
 thread B {
   lockB.lock();
   //...
@@ -51,7 +51,7 @@ thread B {
 (更一般的，如果出现app已经出现了ANR，也可以直接从/data/anr/ 目录下使用 `adb pull` 把anr log 导出来)。
 
 e.g.
-```
+``` java
 "main" prio=5 tid=1 Waiting
   | group="main" sCount=1 dsCount=0 flags=1 obj=0x729291f0 self=0xe9c3ae00
   | sysTid=2742 nice=-10 cgrp=default sched=0/0 handle=0xea48bdc8
