@@ -1,10 +1,10 @@
 # Dependencies
 markdown:         kramdown
 highlighter:      rouge
-remote_theme: fongandrew/hydeout
+remote_theme:     fongandrew/hydeout
 
 # Setup
-title:            Hydeout
+title:            The painting of the voice
 tagline:          'A Jekyll theme'
 description:      'The Notes'
 url:              https://rayworks.github.io
