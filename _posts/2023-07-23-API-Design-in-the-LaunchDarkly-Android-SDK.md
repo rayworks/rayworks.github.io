@@ -8,8 +8,6 @@ tags:
   - syntax highlighting
 ---
 
-# API Design in the LaunchDarkly Android SDK
-
 ## Introduction
 In my recent role, I found myself working on a legacy Android project, a common scenario for many developers. The project involved enabling a specific feature for a group of users, for which we had implemented the LaunchDarkly solution (v4.2.3). But we encountered an intriguing issue.
 
@@ -19,9 +17,9 @@ QA reported a peculiar inconsistency:
 
 Why would we encounter inconsistencies between the two sets of SDKs—one for Android and the other for iOS? Why would the same user encounter different feature flag values on different platforms?
 
-## Delving Deeper
+## Diving Deeper
 > We initially observed that the method invoked to retrieve a feature flag with a specific key always returned false. However, after re-logging in, we could fetch the value true. 
-> 
+
 This was further corroborated by another QA team member.
 
 We noticed an error log when reading an invalid feature flag:
@@ -30,15 +28,13 @@ We noticed an error log when reading an invalid feature flag:
 
 > LaunchDarkly: W Client did not successfully initialize within 0 seconds. It could be taking longer than expected to start up
 
-This log entry suggested there might be a duration parameter for the initialization phase.
-
-Upon inspecting the LDClient constructor:
+This log entry suggested there might be a duration parameter for the initialization phase. Upon inspecting the `LDClient` static constructor:
 
 ```kotlin
 LDClient.init(app, ldConfig, id, 0)
 ```
 
-And its signature:
+and its signature:
 
 ```java
 /**
