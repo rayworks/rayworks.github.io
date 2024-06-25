@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DB Migration: Ensuring Smooth Transitions
+title: 'DB Migration: Ensuring Smooth Transitions'
 tags:
   - code
   - Database
