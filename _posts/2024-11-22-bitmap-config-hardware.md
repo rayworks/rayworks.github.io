@@ -1,4 +1,4 @@
- ---
+---
 layout: post
 title: '记一次 Bitmap.Config.HARDWARE 引发的事故'
 tags:
